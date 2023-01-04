@@ -21,6 +21,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="../js/burgerNav.js" defer></script>
+    <script src="../js/techPage.js" defer></script>
   </head>
   <body>
     <div class="fullpage">
@@ -29,7 +31,7 @@
           <div class="header-content">
             <a href="/">
               <img
-                src="/lab2_img/AMP_text.png"
+                src="/img/AMP_text.png"
                 alt="Main page"
                 width="138"
                 height="57"
@@ -50,7 +52,7 @@
             </nav>
             <a href="/">
               <img
-                src="/lab2_img/AMP_icon.png"
+                src="/img/AMP_icon.png"
                 alt="Main page"
                 width="84"
                 height="80"
@@ -62,15 +64,10 @@
         <div class="header-mobile">
           <div class="header-content">
             <a href="/">
-              <img
-                src="/lab2_img/AMP.png"
-                alt="Main page"
-                width="102"
-                height="30"
-              />
+              <img src="/img/AMP.png" alt="Main page" width="102" height="30" />
             </a>
 
-            <div alt="Open menu" onclick="openNav()">
+            <div alt="Open menu" class="open-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svgjs="http://svgjs.com/svgjs"
@@ -100,7 +97,7 @@
           </div>
 
           <div id="burger-nav" class="overlay">
-            <div alt="Close menu" class="close-button" onclick="closeNav()">
+            <div alt="Close menu" class="close-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svgjs="http://svgjs.com/svgjs"
@@ -350,39 +347,45 @@
         </div>
 
         <!--Horisontal-Carousel-->
-        <div class="hc-desktop">
-          <ol class="container">
-            <li class="slide first">
-              <div class="number-text">1 / 3</div>
-              <p>
-                Our AI platform, AMP Neuron™, uses computer vision to recognize
-                patterns of specific recyclable materials within a complex waste
-                stream of smashed, folded, and tattered objects — all combined
-                together.
-              </p>
+        <div class="hc">
+          <ul class="slides-container">
+            <li class="slide">
+              <div class="content first">
+                <div class="number-text">1 / 3</div>
+                <p>
+                  Our AI platform, AMP Neuron™, uses computer vision to
+                  recognize patterns of specific recyclable materials within a
+                  complex waste stream of smashed, folded, and tattered objects
+                  — all combined together.
+                </p>
+              </div>
             </li>
 
-            <li class="slide second">
-              <div class="number-text">2 / 3</div>
-              <p>
-                Neuron distinguishes different plastic polymers, types of paper,
-                metal containers, and multilayered packages to characterize
-                what's in the recycling stream and what needs to be sorted
-                during different process stages.
-              </p>
+            <li class="slide">
+              <div class="content second">
+                <div class="number-text">2 / 3</div>
+                <p>
+                  Neuron distinguishes different plastic polymers, types of
+                  paper, metal containers, and multilayered packages to
+                  characterize what's in the recycling stream and what needs to
+                  be sorted during different process stages.
+                </p>
+              </div>
             </li>
 
-            <li class="slide third">
-              <div class="number-text">3 / 3</div>
-              <p>
-                Neuron then guides robots to sort and recover what material to
-                recycle or contamination to be removed.
-              </p>
+            <li class="slide">
+              <div class="content third">
+                <div class="number-text">3 / 3</div>
+                <p>
+                  Neuron then guides robots to sort and recover what material to
+                  recycle or contamination to be removed.
+                </p>
+              </div>
             </li>
-          </ol>
+          </ul>
 
           <div class="slide-toggle">
-            <div class="arrow prev" onclick="plusSlides(-1)">
+            <div class="arrow prev">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 enable-background="new 0 0 24 24"
@@ -395,7 +398,7 @@
                 />
               </svg>
             </div>
-            <div class="arrow next" onclick="plusSlides(1)">
+            <div class="arrow next">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 enable-background="new 0 0 24 24"
@@ -824,11 +827,11 @@
           <a href="/">
             <img
               srcset="
-                /lab2_img/AMP_footer_large.png 180w,
-                /lab2_img/AMP_footer_small.png  85w
+                /img/AMP_footer_large.png 180w,
+                /img/AMP_footer_small.png  85w
               "
               sizes="(max-width: 768px) 85px, 180px"
-              src="/lab2_img/AMP_footer_large.png"
+              src="/img/AMP_footer_large.png"
               alt="Main page"
             />
           </a>
@@ -845,40 +848,5 @@
         </nav>
       </footer>
     </div>
-    <script>
-      /* Open */
-      function openNav() {
-        document.getElementById("burger-nav").style.width = "100%";
-      }
-
-      /* Close */
-      function closeNav() {
-        document.getElementById("burger-nav").style.width = "0%";
-      }
-
-      /* Slider managing */
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-      }
-    </script>
   </body>
 </html>
