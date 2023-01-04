@@ -22,6 +22,8 @@
     />
 
     <link rel="stylesheet" href="./css/main.css" />
+    <script src="/js/burgerNav.js" defer></script>
+    <script src="/js/mainPage.js" defer></script>
   </head>
   <body>
     <div class="fullpage">
@@ -30,7 +32,7 @@
           <div class="header-content">
             <a href="/">
               <img
-                src="/lab2_img/AMP_text.png"
+                src="/img/AMP_text.png"
                 alt="Main page"
                 width="138"
                 height="57"
@@ -51,7 +53,7 @@
             </nav>
             <a href="/">
               <img
-                src="/lab2_img/AMP_icon.png"
+                src="/img/AMP_icon.png"
                 alt="Main page"
                 width="84"
                 height="80"
@@ -63,15 +65,10 @@
         <div class="header-mobile">
           <div class="header-content">
             <a href="/">
-              <img
-                src="/lab2_img/AMP.png"
-                alt="Main page"
-                width="102"
-                height="30"
-              />
+              <img src="/img/AMP.png" alt="Main page" width="102" height="30" />
             </a>
 
-            <div alt="Open menu" onclick="openNav()">
+            <div alt="Open menu" class="open-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svgjs="http://svgjs.com/svgjs"
@@ -101,7 +98,7 @@
           </div>
 
           <div id="burger-nav" class="overlay">
-            <div alt="Close menu" class="close-button" onclick="closeNav()">
+            <div alt="Close menu" class="close-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svgjs="http://svgjs.com/svgjs"
@@ -197,10 +194,10 @@
           </p>
         </div>
 
-        <div class="slider">
-          <div class="slide-toggle-desktop">
-            <div aria-label="Previous slide" class="arrow">
-              <a href="#" class="prev" onclick="plusSlides(-1)">
+        <!--Vertical-Carousel-->
+        <div class="vc">
+          <div class="slide-toggle desktop">
+            <div class="arrow prev">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:svgjs="http://svgjs.com/svgjs"
@@ -224,8 +221,7 @@
                 </svg>
               </a>
             </div>
-            <div aria-label="Next slide" class="arrow">
-              <a href="#" class="next" onclick="plusSlides(1)">
+            <div class="arrow next">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:svgjs="http://svgjs.com/svgjs"
@@ -247,15 +243,14 @@
                     />
                   </svg>
                 </svg>
-              </a>
             </div>
           </div>
 
-          <div class="container">
+          <div class="slides-container">
             <!--Plastics-->
             <div class="slide plastics">
               <div class="slide-text">
-                <h3 id="1">Plastics</h3>
+                <h3>Plastics</h3>
                 <p>Supported material types and form factors</p>
                 <div class="row">
                   <div class="column">
@@ -289,7 +284,7 @@
             <!--Paper-->
             <div class="slide paper">
               <div class="slide-text">
-                <h3 id="2">Paper</h3>
+                <h3>Paper</h3>
                 <p>Supported material types</p>
                 <div>
                   <ul>
@@ -310,7 +305,7 @@
             <!--Metals-->
             <div class="slide metals">
               <div class="slide-text">
-                <h3 id="3">Metals</h3>
+                <h3>Metals</h3>
                 <p>Supported material types</p>
                 <div>
                   <ul>
@@ -328,7 +323,7 @@
             <!--Construction-->
             <div class="slide construction">
               <div class="slide-text">
-                <h3 id="4">Construction</h3>
+                <h3>Construction</h3>
                 <p>Supported material types</p>
                 <div>
                   <ul>
@@ -349,7 +344,7 @@
             <!--Electronics-->
             <div class="slide electronics">
               <div class="slide-text">
-                <h3 id="5">Electronics</h3>
+                <h3>Electronics</h3>
                 <p>Supported material types</p>
                 <div>
                   <ul>
@@ -371,19 +366,13 @@
             <!--Organics-->
             <div class="slide organics">
               <div class="slide-text">
-                <h3 id="6">Organics</h3>
+                <h3>Organics</h3>
               </div>
             </div>
           </div>
 
-          <div class="slide-toggle-mobile">
-            <div class="arrow">
-              <a
-                aria-label="Previous slide"
-                href="#"
-                class="prev"
-                onclick="plusSlides(-1)"
-              >
+          <div class="slide-toggle mobile">
+            <div class="arrow prev">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:svgjs="http://svgjs.com/svgjs"
@@ -405,15 +394,9 @@
                     />
                   </svg>
                 </svg>
-              </a>
+          
             </div>
-            <div class="arrow">
-              <a
-                aria-label="Next slide"
-                href="#"
-                class="next"
-                onclick="plusSlides(1)"
-              >
+            <div class="arrow next">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:svgjs="http://svgjs.com/svgjs"
@@ -435,7 +418,6 @@
                     />
                   </svg>
                 </svg>
-              </a>
             </div>
           </div>
         </div>
@@ -490,11 +472,11 @@
           <a href="/">
             <img
               srcset="
-                /lab2_img/AMP_footer_large.png 180w,
-                /lab2_img/AMP_footer_small.png  85w
+                /img/AMP_footer_large.png 180w,
+                /img/AMP_footer_small.png  85w
               "
               sizes="(max-width: 768px) 85px, 180px"
-              src="/lab2_img/AMP_footer_large.png"
+              src="/img/AMP_footer_large.png"
               alt="Main page"
             />
           </a>
@@ -511,56 +493,5 @@
         </nav>
       </footer>
     </div>
-    <script>
-      /* Open */
-      function openNav() {
-        document.getElementById("burger-nav").style.width = "100%";
-      }
-
-      /* Close */
-      function closeNav() {
-        document.getElementById("burger-nav").style.width = "0%";
-      }
-
-      let slidePos = 1;
-      let slidesAmount = 6;
-      let prev, next;
-      setArrows();
-
-      function plusSlides(n) {
-        slidePos += n;
-
-        if (slidePos > slidesAmount) {
-          slidePos = 1;
-        }
-        if (slidePos < 1) {
-          slidePos = slidesAmount;
-        }
-
-        /*var container = document.getElementById("");
-        var scrollTo = document.getElementById(toString(slidePos));*/
-
-        setArrows();
-      }
-
-      function setArrows() {
-        prev = slidePos == 1 ? slidesAmount : slidePos - 1;
-        next = slidePos == slidesAmount ? 1 : slidePos + 1;
-
-        console.log(
-          "prev - " + prev + " | curr - " + slidePos + " | next - " + next
-        );
-
-        /*let nextArrows = document.getElementsByClassName("next");
-        for (let i = 0; i < nextArrows.length; i++) {
-          nextArrows[i].href = "#" + toString(next);
-        }
-
-        let prevArrows = document.getElementsByClassName("prev");
-        for (let i = 0; i < prevArrows.length; i++) {
-          prevArrows[i].href = "#" + toString(prev);
-        }*/
-      }
-    </script>
   </body>
 </html>
