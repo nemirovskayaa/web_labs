@@ -21,6 +21,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="../js/burgerNav.js" defer></script>
   </head>
   <body>
     <div class="fullpage">
@@ -29,7 +30,7 @@
           <div class="header-content">
             <a href="/">
               <img
-                src="/lab2_img/AMP_text.png"
+                src="/img/AMP_text.png"
                 alt="Main page"
                 width="138"
                 height="57"
@@ -50,7 +51,7 @@
             </nav>
             <a href="/">
               <img
-                src="/lab2_img/AMP_icon.png"
+                src="/img/AMP_icon.png"
                 alt="Main page"
                 width="84"
                 height="80"
@@ -62,15 +63,10 @@
         <div class="header-mobile">
           <div class="header-content">
             <a href="/">
-              <img
-                src="/lab2_img/AMP.png"
-                alt="Main page"
-                width="102"
-                height="30"
-              />
+              <img src="/img/AMP.png" alt="Main page" width="102" height="30" />
             </a>
 
-            <div alt="Open menu" onclick="openNav()">
+            <div alt="Open menu" class="open-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svgjs="http://svgjs.com/svgjs"
@@ -100,7 +96,7 @@
           </div>
 
           <div id="burger-nav" class="overlay">
-            <div alt="Close menu" class="close-button" onclick="closeNav()">
+            <div alt="Close menu" class="close-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svgjs="http://svgjs.com/svgjs"
@@ -176,7 +172,7 @@
 
       <section id="positions-section">
         <div class="workers-img">
-          <img src="/lab2_img/AMP_workers_mob.png" alt="AMP workers" />
+          <img src="/img/AMP_workers_mob.png" alt="AMP workers" />
         </div>
 
         <div class="container">
@@ -203,11 +199,11 @@
 
             <img
               srcset="
-                /lab2_img/AMP_workers_large.png 900w,
-                /lab2_img/AMP_workers_small.png 503w
+                /img/AMP_workers_large.png 900w,
+                /img/AMP_workers_small.png 503w
               "
               sizes="(max-width: 768px) 503px, 900px"
-              src="/lab2_img/AMP_workers_large.png"
+              src="/img/AMP_workers_large.png"
               alt="AMP workers"
             />
           </div>
@@ -229,11 +225,11 @@
 
             <img
               srcset="
-                /lab2_img/sorting_robot_large.png 500w,
-                /lab2_img/sorting_robot_small.png 260w
+                /img/sorting_robot_large.png 500w,
+                /img/sorting_robot_small.png 260w
               "
               sizes="(max-width: 768px) 260px, 500px"
-              src="/lab2_img/sorting_robot_large.png"
+              src="/img/sorting_robot_large.png"
               alt="Sorting robot"
             />
           </div>
@@ -284,11 +280,11 @@
           <a href="/">
             <img
               srcset="
-                /lab2_img/AMP_footer_large.png 180w,
-                /lab2_img/AMP_footer_small.png  85w
+                /img/AMP_footer_large.png 180w,
+                /img/AMP_footer_small.png  85w
               "
               sizes="(max-width: 768px) 85px, 180px"
-              src="/lab2_img/AMP_footer_large.png"
+              src="/img/AMP_footer_large.png"
               alt="Main page"
             />
           </a>
@@ -305,16 +301,5 @@
         </nav>
       </footer>
     </div>
-    <script>
-      /* Open */
-      function openNav() {
-        document.getElementById("burger-nav").style.width = "100%";
-      }
-
-      /* Close */
-      function closeNav() {
-        document.getElementById("burger-nav").style.width = "0%";
-      }
-    </script>
   </body>
 </html>
