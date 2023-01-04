@@ -134,6 +134,7 @@ h3 {
   z-index: 3;
   overflow-x: hidden;
   background-color: #1b3142;
+  transition: 0.5s;
 }
 
 .header .overlay .close-button {
@@ -238,6 +239,7 @@ h3 {
 
 li a {
   color: #ffffff;
+  transition: 0.5s;
 }
 
 li a:hover {
@@ -252,6 +254,7 @@ li a:hover {
     width: 130px;
     border: 5px solid #40a8e2;
     border-radius: 17px;
+    transition: 0.5s;
 
     text-align: center;
     font-size: 30px;
@@ -265,6 +268,7 @@ li a:hover {
     width: 70px;
     border: 3px solid #40a8e2;
     border-radius: 12px;
+    transition: 0.5s;
 
     text-align: center;
     font-size: 18px;
@@ -301,13 +305,13 @@ li a:hover {
 
 @media only screen and (min-width: 769px) {
   #hero-section .hero-banner {
-    background-image: url("/lab2_img/hero_background_large.png");
+    background-image: url("/img/hero_background_large.png");
   }
 }
 
 @media only screen and (max-width: 768px) {
   #hero-section .hero-banner {
-    background-image: url("/lab2_img/hero_background_small.png");
+    background-image: url("/img/hero_background_small.png");
   }
 }
 
@@ -375,95 +379,96 @@ li a:hover {
   margin-bottom: 8%;
 }
 
-#materials-section .container {
-  overflow-y: auto;
+#materials-section .slides-container {
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 @media only screen and (max-width: 768px) {
-  #materials-section .slider {
+  #materials-section .vc {
     padding: 0 5%;
   }
 
-  #materials-section .container {
+  #materials-section .slides-container {
     max-height: 400px;
   }
 
-  #materials-section .container .slide {
-    min-height: 200px;
+  #materials-section .slides-container .slide {
     margin: 5% 0;
   }
 
-  #materials-section .container .plastics {
-    background-image: url("/lab2_img/plastics_image_small.png");
+  #materials-section .slides-container .slide-text {
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
   }
 
-  #materials-section .container .paper {
-    background-image: url("/lab2_img/paper_image_small.png");
+  #materials-section .slides-container .plastics .slide-text {
+    background-image: url("/img/plastics_image_small.png");
   }
 
-  #materials-section .container .metals {
-    background-image: url("/lab2_img/metals_image_small.png");
+  #materials-section .slides-container .paper .slide-text {
+    background-image: url("/img/paper_image_small.png");
   }
 
-  #materials-section .container .construction {
-    background-image: url("/lab2_img/constuction_image_small.png");
+  #materials-section .slides-container .metals .slide-text {
+    background-image: url("/img/metals_image_small.png");
   }
 
-  #materials-section .container .electronics {
-    background-image: url("/lab2_img/electronics_image_small.png");
+  #materials-section .slides-container .construction .slide-text {
+    background-image: url("/img/constuction_image_small.png");
   }
 
-  #materials-section .container .organics {
-    background-image: url("/lab2_img/organics_image_small.png");
+  #materials-section .slides-container .electronics .slide-text {
+    background-image: url("/img/electronics_image_small.png");
+  }
+
+  #materials-section .slides-container .organics .slide-text {
+    background-image: url("/img/organics_image_small.png");
   }
 }
 
 @media only screen and (min-width: 769px) {
-  #materials-section .slider {
+  #materials-section .vc {
     width: 60%;
     position: relative;
   }
 
-  #materials-section .container {
+  #materials-section .slides-container {
     max-height: 1000px;
   }
 
-  #materials-section .container .slide {
+  #materials-section .slides-container .slide {
     min-height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
   }
 
-  #materials-section .container .plastics {
-    background-image: url("/lab2_img/plastics_image_large.png");
+  #materials-section .slides-container .plastics {
+    background-image: url("/img/plastics_image_large.png");
   }
 
-  #materials-section .container .paper {
-    background-image: url("/lab2_img/paper_image_large.png");
+  #materials-section .slides-container .paper {
+    background-image: url("/img/paper_image_large.png");
   }
 
-  #materials-section .container .metals {
-    background-image: url("/lab2_img/metals_image_large.png");
+  #materials-section .slides-container .metals {
+    background-image: url("/img/metals_image_large.png");
   }
 
-  #materials-section .container .construction {
-    background-image: url("/lab2_img/constuction_image_large.png");
+  #materials-section .slides-container .construction {
+    background-image: url("/img/constuction_image_large.png");
   }
 
-  #materials-section .container .electronics {
-    background-image: url("/lab2_img/electronics_image_large.png");
+  #materials-section .slides-container .electronics {
+    background-image: url("/img/electronics_image_large.png");
   }
 
-  #materials-section .container .organics {
-    background-image: url("/lab2_img/organics_image_large.png");
+  #materials-section .slides-container .organics {
+    background-image: url("/img/organics_image_large.png");
   }
-}
-
-@media only screen and (max-width: 768px) {
-}
-
-#materials-section .container .slide {
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #ffffff;
 }
 
 #materials-section .slide .slide-text {
@@ -489,7 +494,7 @@ li a:hover {
   margin-bottom: 3%;
 }
 
-#materials-section .slider .slide-toggle-desktop {
+#materials-section .vc .desktop {
   width: 100%;
   position: absolute;
   justify-content: space-evenly;
@@ -502,11 +507,11 @@ li a:hover {
     font-size: 20px;
   }
 
-  #materials-section .slider .slide-toggle-mobile {
+  #materials-section .vc .mobile {
     display: none;
   }
 
-  #materials-section .slider .slide-toggle-desktop {
+  #materials-section .vc .desktop {
     display: flex;
   }
 }
@@ -516,17 +521,17 @@ li a:hover {
     font-size: 12px;
   }
 
-  #materials-section .slider .slide-toggle-desktop {
+  #materials-section .vc .desktop {
     display: none;
   }
 
-  #materials-section .slider .slide-toggle-mobile {
+  #materials-section .vc .mobile {
     display: flex;
     justify-content: space-evenly;
   }
 }
 
-#materials-section .slider .slide-toggle-mobile .arrow {
+#materials-section .vc .mobile .arrow {
   margin: 3%;
 }
 
@@ -544,7 +549,7 @@ li a:hover {
 
 @media only screen and (min-width: 769px) {
   .plain-banner .title {
-    background-image: url("/lab2_img/AMP_grey_icon_small.png");
+    background-image: url("/img/AMP_grey_icon_small.png");
     padding-top: 15%;
   }
 }
@@ -556,7 +561,7 @@ li a:hover {
 
 @media only screen and (max-width: 768px) {
   .plain-banner .title {
-    background-image: url("/lab2_img/AMP_grey_icon_large.png");
+    background-image: url("/img/AMP_grey_icon_large.png");
     padding-top: 25%;
   }
 }
@@ -580,13 +585,13 @@ li a:hover {
 
 @media only screen and (min-width: 769px) {
   #ai-section .ai {
-    background-image: url("/lab2_img/ai_background_large.png");
+    background-image: url("/img/ai_background_large.png");
   }
 }
 
 @media only screen and (max-width: 768px) {
   #ai-section .ai {
-    background-image: url("/lab2_img/ai_background_small.png");
+    background-image: url("/img/ai_background_small.png");
   }
 
   .section-title h2 {
@@ -663,64 +668,118 @@ ul.row > li.row-item {
   color: #1b3142;
 }
 
-#intell-at-scale-section .hc-desktop ol.container > li.slide {
-  display: none;
-  min-height: 100px;
+#intell-at-scale-section .hc {
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 769px) {
+  #intell-at-scale-section .hc ul.slides-container {
+    height: 80%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #intell-at-scale-section .hc ul.slides-container {
+    height: 20%;
+  }
+}
+
+#intell-at-scale-section .hc ul.slides-container {
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+#intell-at-scale-section .hc ul.slides-container > li.slide {
+  width: 100%;
+  height: 100%;
+  flex: 1 0 100%;
+}
+
+#intell-at-scale-section .hc ul.slides-container .content {
+  margin: 5%;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin: 0 5%;
-  padding: 10%;
   border-radius: 17px;
   color: #ffffff;
 }
 
 @media only screen and (min-width: 769px) {
-  #intell-at-scale-section .hc-desktop ol.container .first {
-    background-image: url("/lab2_img/hc1_large.png");
+  #intell-at-scale-section .hc ul.slides-container .content p {
+    height: 60vh;
   }
 
-  #intell-at-scale-section .hc-desktop ol.container .second {
-    background-image: url("/lab2_img/hc2_large.png");
+  #intell-at-scale-section .hc ul.slides-container .content p,
+  #intell-at-scale-section .hc ul.slides-container .content .number-text {
+    padding: 0 20%;
+    padding-top: 5%;
   }
 
-  #intell-at-scale-section .hc-desktop ol.container .third {
-    background-image: url("/lab2_img/hc3_large.png");
+  #intell-at-scale-section .hc ul.slides-container .first {
+    background-image: url("/img/hc1_large.png");
+  }
+
+  #intell-at-scale-section .hc ul.slides-container .second {
+    background-image: url("/img/hc2_large.png");
+  }
+
+  #intell-at-scale-section .hc ul.slides-container .third {
+    background-image: url("/img/hc3_large.png");
+  }
+
+  #intell-at-scale-section .hc .slide-toggle {
+    position: absolute;
+    top: 50%;
+    justify-content: space-between;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #intell-at-scale-section .hc-desktop ol.container .first {
-    background-image: url("/lab2_img/hc1_small.png");
+  #intell-at-scale-section .hc ul.slides-container .content p {
+    height: 30vh;
   }
 
-  #intell-at-scale-section .hc-desktop ol.container .second {
-    background-image: url("/lab2_img/hc2_small.png");
+  #intell-at-scale-section .hc ul.slides-container .content p,
+  #intell-at-scale-section .hc ul.slides-container .content .number-text {
+    padding: 2% 10%;
   }
 
-  #intell-at-scale-section .hc-desktop ol.container .third {
-    background-image: url("/lab2_img/hc3_small.png");
+  #intell-at-scale-section .hc ul.slides-container .first {
+    background-image: url("/img/hc1_small.png");
+  }
+
+  #intell-at-scale-section .hc ul.slides-container .second {
+    background-image: url("/img/hc2_small.png");
+  }
+
+  #intell-at-scale-section .hc ul.slides-container .third {
+    background-image: url("/img/hc3_small.png");
+  }
+
+  #intell-at-scale-section .hc .slide-toggle {
+    position: relative;
+    justify-content: space-around;
   }
 }
 
-#intell-at-scale-section .hc-desktop ol.container > li.slide .number-text {
-  margin-bottom: 10%;
-  font-weight: 500;
-}
-
-#intell-at-scale-section .hc-desktop .slide-toggle {
+#intell-at-scale-section .hc .slide-toggle {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  padding: 0 5%;
 }
 
-#intell-at-scale-section .hc-desktop .slide-toggle .arrow {
+#intell-at-scale-section .hc .slide-toggle .arrow {
   cursor: pointer;
-  padding: 16px;
-  margin: 3%;
 }
 
 @media only screen and (min-width: 769px) {
-  #intell-at-scale-section .hc-desktop .slide-toggle .arrow svg {
+  #intell-at-scale-section .hc .slide-toggle .arrow svg {
     width: 100px;
     height: 100px;
   }
@@ -736,13 +795,13 @@ ul.row > li.row-item {
 
 @media only screen and (min-width: 769px) {
   #robotic-sorting-section .robotic-sorting-title {
-    background-image: url("/lab2_img/rob_sort_background_large.png");
+    background-image: url("/img/rob_sort_background_large.png");
   }
 }
 
 @media only screen and (max-width: 768px) {
   #robotic-sorting-section .robotic-sorting-title {
-    background-image: url("/lab2_img/rob_sort_background_small.png");
+    background-image: url("/img/rob_sort_background_small.png");
     text-align: center;
   }
 }
@@ -780,13 +839,13 @@ ul.row > li.row-item {
 
 @media only screen and (min-width: 769px) {
   #material-char-section .mat-char {
-    background-image: url("/lab2_img/material_char_background_large.png");
+    background-image: url("/img/material_char_background_large.png");
   }
 }
 
 @media only screen and (max-width: 768px) {
   #material-char-section .mat-char {
-    background-image: url("/lab2_img/material_char_background_small.png");
+    background-image: url("/img/material_char_background_small.png");
   }
 }
 
@@ -825,13 +884,13 @@ ul.row > li.row-item {
 
 @media only screen and (min-width: 769px) {
   #careers-text-section .title {
-    background-image: url("/lab2_img/careers_background_large.png");
+    background-image: url("/img/careers_background_large.png");
   }
 }
 
 @media only screen and (max-width: 768px) {
   #careers-text-section .title {
-    background-image: url("/lab2_img/careers_background_small.png");
+    background-image: url("/img/careers_background_small.png");
   }
 }
 
@@ -970,13 +1029,13 @@ ul.row > li.row-item {
 
 @media only screen and (min-width: 769px) {
   #banner-section .title {
-    background-image: url("/lab2_img/global_presence_large.png");
+    background-image: url("/img/global_presence_large.png");
   }
 }
 
 @media only screen and (max-width: 768px) {
   #banner-section .title {
-    background-image: url("/lab2_img/global_presence_small.png");
+    background-image: url("/img/global_presence_small.png");
   }
 }
 
